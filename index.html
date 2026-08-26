@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>مِشكاة الرُّقى والمُجَرَّبات</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary-fixed": "#ffdbca",
+                "primary": "#003527",
+                "paper-white": "#f8fafc",
+                "outline-variant": "#bfc9c3",
+                "primary-container": "#064e3b",
+                "on-tertiary": "#ffffff",
+                "emerald-deep": "#064e3b",
+                "surface-container-highest": "#e0e3e5",
+                "on-tertiary-fixed-variant": "#005236",
+                "secondary-container": "#fd8a42",
+                "on-secondary-fixed": "#331200",
+                "on-secondary": "#ffffff",
+                "on-tertiary-container": "#31c98f",
+                "surface-dim": "#d8dadc",
+                "on-secondary-fixed-variant": "#763300",
+                "tertiary-fixed": "#6ffbbe",
+                "surface-tint": "#2b6954",
+                "inverse-on-surface": "#eff1f3",
+                "background": "#f7f9fb",
+                "inverse-primary": "#95d3ba",
+                "tertiary-fixed-dim": "#4edea3",
+                "on-primary-fixed": "#002117",
+                "slate-gray": "#475569",
+                "on-error": "#ffffff",
+                "ink-black": "#0f172a",
+                "on-primary-fixed-variant": "#0b513d",
+                "error-container": "#ffdad6",
+                "primary-fixed": "#b0f0d6",
+                "error": "#ba1a1a",
+                "on-background": "#191c1e",
+                "surface-container": "#eceef0",
+                "surface-container-high": "#e6e8ea",
+                "on-primary-container": "#80bea6",
+                "surface-container-low": "#f2f4f6",
+                "tertiary-container": "#004f34",
+                "on-error-container": "#93000a",
+                "on-surface": "#191c1e",
+                "on-primary": "#ffffff",
+                "emerald-vibrant": "#10b981",
+                "secondary-fixed-dim": "#ffb68e",
+                "surface-variant": "#e0e3e5",
+                "tertiary": "#003623",
+                "gold-rich": "#b45309",
+                "surface-bright": "#f7f9fb",
+                "on-surface-variant": "#404944",
+                "surface": "#f7f9fb",
+                "secondary": "#9b4500",
+                "inverse-surface": "#2d3133",
+                "on-secondary-container": "#682c00",
+                "outline": "#707974",
+                "on-tertiary-fixed": "#002113",
+                "surface-container-lowest": "#ffffff",
+                "primary-fixed-dim": "#95d3ba"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "base": "8px",
+                "margin-desktop": "64px",
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "container-max": "1120px",
+                "safe": "env(safe-area-inset-bottom)"
+        },
+        "fontFamily": {
+                "label-sm": ["Work Sans"],
+                "body-lg": ["Literata"],
+                "label-md": ["Work Sans"],
+                "title-md": ["Literata"],
+                "headline-lg-mobile": ["Literata"],
+                "body-md": ["Literata"],
+                "display-lg": ["Literata"],
+                "headline-lg": ["Literata"]
+        }
+      },
+    },
+  }
+</script>
+<style>
+    body {
+        background-color: #f8fafc;
+        background-image: none;
+    }
+    .dark body {
+        background-color: #0f172a;
+    }
+    .section-content { display: none; opacity: 0; transition: opacity 0.3s ease-in-out; }
+    .section-content.active { display: block; opacity: 1; }
+</style>
+</head>
+<body class="text-slate-gray dark:text-slate-300 dark:bg-ink-black antialiased min-h-screen flex flex-col relative font-body-md pb-24 md:pb-0 transition-colors duration-300">
+<!-- TopAppBar -->
+<header class="bg-paper-white dark:bg-ink-black border-b border-outline-variant dark:border-slate-800 docked full-width top-0 z-50 sticky transition-all duration-300">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-4 cursor-pointer" onclick="showSection('landing')">
+<span class="material-symbols-outlined text-emerald-deep dark:text-emerald-vibrant text-2xl" data-icon="menu_book">menu_book</span>
+<span class="font-display-lg text-[24px] md:text-[32px] text-primary dark:text-primary-fixed tracking-tight">مِشكاة الرُّقى</span>
+</div>
+<div class="hidden md:flex gap-6 items-center">
+<button class="nav-link font-label-md text-slate-gray dark:text-slate-300 hover:text-emerald-deep dark:hover:text-emerald-vibrant" onclick="showSection('home')">الرئيسية</button>
+<button class="nav-link font-label-md text-slate-gray dark:text-slate-300 hover:text-emerald-deep dark:hover:text-emerald-vibrant" onclick="showSection('advanced-search')">البحث المتقدم</button>
+<button class="nav-link font-label-md text-slate-gray dark:text-slate-300 hover:text-emerald-deep dark:hover:text-emerald-vibrant" onclick="showSection('methodology')">المنهجية</button>
+<button class="nav-link font-label-md text-slate-gray dark:text-slate-300 hover:text-emerald-deep dark:hover:text-emerald-vibrant" onclick="showSection('sources')">المصادر</button>
+<button class="nav-link font-label-md text-slate-gray dark:text-slate-300 hover:text-emerald-deep dark:hover:text-emerald-vibrant" onclick="showSection('contact')">اتصل بنا</button>
+<button class="text-slate-gray dark:text-slate-300 hover:text-gold-rich" onclick="toggleDarkMode()">
+<span class="material-symbols-outlined">light_mode</span>
+</button>
+</div>
+<div class="md:hidden flex items-center">
+<button class="text-slate-gray dark:text-slate-300 hover:text-gold-rich p-2" onclick="toggleDarkMode()">
+<span class="material-symbols-outlined">light_mode</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col items-center justify-start py-10 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto min-h-screen">
+<!-- LANDING SECTION -->
+<div class="section-content active w-full pt-10" id="section-landing">
+<section class="text-center w-full max-w-4xl mx-auto mb-24 flex flex-col items-center">
+<div class="mb-12 relative">
+<div class="absolute inset-0 bg-gold-rich opacity-10 rounded-full blur-3xl w-64 h-64 mx-auto -z-10"></div>
+<img alt="شعار مشكاة" class="w-48 h-48 md:w-64 md:h-64 object-contain mx-auto" src="https://lh3.googleusercontent.com/aida/AEtjO1XAIHkRJOiek5uJJhJPmepg0D20YTEon0sLNd128X7dMz6gPSfJ-WoQ5FGSf17Efb83q3Lmeny_hOx-EC2GZluTIMQOXzZyATKzYfbj7zHmtnUyAFzvFp93Ws1gqnKo4XGjjrTkCniyfZ1MCBULr7yw60r1HfhML_N5sZXJoCeOwizNVVX5-4mNZcBxKqXAUb3RQM7qLEMiP2o4ZVC8eVBO03Hq9wCATq7vGU7zKUWJ9kgbj673iO1HEwc"/>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-[64px] text-emerald-deep dark:text-emerald-vibrant mb-6 leading-tight">
+                مِشكاة الرُّقى والمُجَرَّبات
+            </h1>
+<p class="font-title-md text-title-md md:text-[24px] text-slate-gray dark:text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+                أول موسوعة لجمع الرقى المجربات بالنصوص الشافيات
+            </p>
+<div class="flex flex-col gap-4 items-center">
+<button class="bg-gold-rich text-on-primary px-10 py-4 rounded-DEFAULT font-title-md text-[20px] shadow-[0_10px_25px_-5px_rgba(180,83,9,0.3)] hover:bg-secondary transition-all duration-300 border border-transparent flex items-center gap-3 inline-flex" onclick="showSection('home')">
+<span>دخول الموسوعة</span>
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<button class="text-slate-gray dark:text-slate-400 hover:text-gold-rich font-label-md underline underline-offset-4 transition-colors" onclick="showSection('home')">
+                    تخطي الكل
+                </button>
+</div>
+</section>
+<section class="w-full max-w-4xl mx-auto mb-24 px-margin-mobile md:px-0">
+<div class="text-center mb-8">
+<h2 class="font-display-lg text-headline-lg md:text-[32px] text-emerald-deep dark:text-emerald-vibrant mb-4">فيديو تعريفي</h2>
+</div>
+<div class="relative aspect-video bg-emerald-deep/5 dark:bg-emerald-deep/20 rounded-xl border border-outline-variant dark:border-slate-700 overflow-hidden shadow-[0_4px_20px_-5px_rgba(6,78,59,0.05)] flex items-center justify-center group cursor-pointer">
+<!-- Placeholder for Video Player -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-20 h-20 rounded-full bg-gold-rich text-on-primary flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
+<span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'FILL' 1">play_arrow</span>
+</div>
+</div>
+<!-- Stylized background pattern for placeholder -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[300px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" data-icon="movie">movie</span>
+</div>
+</div>
+<p class="text-center mt-4 font-label-sm text-slate-gray dark:text-slate-400 opacity-80">
+                تعرض المادة المرئية منهجية البحث والتحقيق (بدون مؤثرات صوتية)
+            </p>
+</section>
+<!-- Bento Grid / Introduction -->
+<section class="w-full grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
+<div class="md:col-span-8 bg-surface-container-lowest dark:bg-slate-800/50 rounded-xl border border-outline-variant dark:border-slate-700 p-8 md:p-12 relative overflow-hidden shadow-[0_4px_20px_-5px_rgba(6,78,59,0.05)]">
+<div class="absolute top-0 left-0 w-full h-1 bg-emerald-deep dark:bg-emerald-vibrant"></div>
+<div class="absolute -right-16 -top-16 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[200px] dark:text-white" data-icon="verified_user">verified_user</span>
+</div>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-emerald-deep/10 dark:bg-emerald-deep/30 flex items-center justify-center text-emerald-deep dark:text-emerald-vibrant">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+</div>
+<h2 class="font-title-md text-[28px] text-emerald-deep dark:text-emerald-vibrant">درع التوثيق</h2>
+</div>
+<p class="font-body-lg text-body-lg text-slate-gray dark:text-slate-300 mb-8">
+                    نعتمد منهجية "الزمرد والذهب" في تقييم المرويات. حيث يمثل الزمرد رصانة البحث العلمي، ويمثل الذهب الموثوقية العالية في توثيق المخطوطات القديمة.
+                </p>
+<div class="flex flex-wrap gap-3">
+<span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-emerald-deep/5 border border-emerald-deep/20 text-emerald-deep dark:text-emerald-vibrant font-label-md">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span>
+                        رصانة البحث
+                    </span>
+<span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gold-rich/5 border border-gold-rich/20 text-gold-rich dark:text-secondary-fixed-dim font-label-md">
+<span class="material-symbols-outlined text-[16px]" data-icon="history_edu">history_edu</span>
+                        توثيق المخطوطات
+                    </span>
+</div>
+</div>
+<div class="md:col-span-4 bg-emerald-deep dark:bg-emerald-deep text-on-primary rounded-xl p-8 flex flex-col justify-between shadow-[0_10px_25px_-5px_rgba(6,78,59,0.15)] relative overflow-hidden">
+<div class="absolute bottom-0 right-0 w-32 h-32 bg-primary opacity-20 rounded-tl-full"></div>
+<div>
+<div class="w-10 h-10 rounded-full border border-gold-rich/30 flex items-center justify-center text-gold-rich mb-6">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h3 class="font-title-md text-[24px] mb-4 text-paper-white">المنهجية العلمية</h3>
+<p class="font-body-md text-surface-variant opacity-90 leading-relaxed mb-6">
+                        تتبع الموسوعة معايير صارمة في الفلترة والتصنيف، لضمان وصول الباحث إلى المعلومة النقية المدققة.
+                    </p>
+</div>
+<button class="text-gold-rich font-label-md hover:text-white transition-colors flex items-center gap-2 group text-right" onclick="showSection('methodology')">
+                    اقرأ المزيد عن المنهجية
+                    <span class="material-symbols-outlined text-[18px] group-hover:-translate-x-1 transition-transform" data-icon="arrow_back">arrow_back</span>
+</button>
+</div>
+</section>
+</div>
+<!-- HOME SECTION -->
+<div class="section-content w-full" id="section-home">
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-emerald-deep dark:text-emerald-vibrant mb-12 text-center">الرئيسية</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 w-full max-w-5xl mx-auto">
+<div class="bg-surface-container-lowest dark:bg-slate-800 p-6 rounded-xl border border-outline-variant dark:border-slate-700 shadow-sm text-center cursor-pointer hover:border-gold-rich transition-colors" onclick="showSection('search-results')">
+<span class="material-symbols-outlined text-4xl text-gold-rich mb-4">menu_book</span>
+<h3 class="font-title-md text-[22px] text-emerald-deep dark:text-emerald-vibrant mb-2">بحث بالسور</h3>
+<p class="font-body-md text-slate-gray dark:text-slate-300">استعرض الرقى والمجربات حسب سور القرآن الكريم.</p>
+</div>
+<div class="bg-surface-container-lowest dark:bg-slate-800 p-6 rounded-xl border border-outline-variant dark:border-slate-700 shadow-sm text-center cursor-pointer hover:border-gold-rich transition-colors" onclick="showSection('search-results')">
+<span class="material-symbols-outlined text-4xl text-gold-rich mb-4">healing</span>
+<h3 class="font-title-md text-[22px] text-emerald-deep dark:text-emerald-vibrant mb-2">بحث بالحالات</h3>
+<p class="font-body-md text-slate-gray dark:text-slate-300">تصنيفات حسب الحالات الروحية والنفسية والجسدية.</p>
+</div>
+<div class="bg-surface-container-lowest dark:bg-slate-800 p-6 rounded-xl border border-outline-variant dark:border-slate-700 shadow-sm text-center cursor-pointer hover:border-gold-rich transition-colors" onclick="showSection('disease-headache')">
+<span class="material-symbols-outlined text-4xl text-gold-rich mb-4">coronavirus</span>
+<h3 class="font-title-md text-[22px] text-emerald-deep dark:text-emerald-vibrant mb-2">بحث بالأمراض</h3>
+<p class="font-body-md text-slate-gray dark:text-slate-300">دليل الرقى للأمراض المستعصية والمنتشرة.</p>
+</div>
+<div class="bg-surface-container-lowest dark:bg-slate-800 p-6 rounded-xl border border-outline-variant dark:border-slate-700 shadow-sm text-center cursor-pointer hover:border-gold-rich transition-colors" onclick="showSection('search-results')">
+<span class="material-symbols-outlined text-4xl text-gold-rich mb-4">record_voice_over</span>
+<h3 class="font-title-md text-[22px] text-emerald-deep dark:text-emerald-vibrant mb-2">تجارب الرقاة</h3>
+<p class="font-body-md text-slate-gray dark:text-slate-300">نستعرض هنا تجارب موثقة لرقاة ثقات.</p>
+</div>
+</div>
+</div>
+<!-- ADVANCED SEARCH SECTION -->
+<div class="section-content w-full" id="section-advanced-search">
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-emerald-deep dark:text-emerald-vibrant mb-12 text-center">البحث المتقدم</h1>
+<div class="max-w-4xl mx-auto bg-surface-container-lowest dark:bg-slate-800 p-8 rounded-xl border border-outline-variant dark:border-slate-700 shadow-sm">
+<form class="space-y-6" onsubmit="event.preventDefault(); showSection('search-results');">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-slate-gray dark:text-slate-300 mb-2">الكلمة المفتاحية</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant dark:border-slate-600 bg-transparent text-slate-gray dark:text-white focus:outline-none focus:border-emerald-deep dark:focus:border-emerald-vibrant" placeholder="أدخل كلمة للبحث..." type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-slate-gray dark:text-slate-300 mb-2">التصنيف</label>
+<select class="w-full px-4 py-3 rounded-lg border border-outline-variant dark:border-slate-600 bg-transparent text-slate-gray dark:text-white focus:outline-none focus:border-emerald-deep dark:focus:border-emerald-vibrant">
+<option value="all">الكل</option>
+<option value="quran">سور القرآن</option>
+<option value="disease">أمراض جسدية</option>
+<option value="spiritual">حالات روحية</option>
+</select>
+</div>
+</div>
+<div class="flex justify-center mt-8">
+<button class="bg-emerald-deep text-on-primary px-8 py-3 rounded-lg font-title-md text-[18px] shadow-sm hover:bg-emerald-vibrant transition-all duration-300 border border-transparent flex items-center gap-2" type="submit">
+<span class="material-symbols-outlined">search</span>
+<span>بحث</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- DISEASE EXAMPLE: HEADACHE -->
+<div class="section-content w-full max-w-4xl mx-auto" id="section-disease-headache">
+<button class="mb-8 text-gold-rich flex items-center gap-2 hover:text-emerald-deep dark:hover:text-emerald-vibrant transition-colors" onclick="showSection('home')">
+<span class="material-symbols-outlined">arrow_forward</span> العودة للأمراض
+</button>
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-emerald-deep dark:text-emerald-vibrant mb-8 text-center">علاج الصداع</h1>
+<div class="bg-surface-container-lowest dark:bg-slate-800 p-6 rounded-xl border border-outline-variant dark:border-slate-700 shadow-sm">
+<div class="flex items-start gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-emerald-deep/10 dark:bg-emerald-deep/30 flex items-center justify-center text-emerald-deep dark:text-emerald-vibrant shrink-0">
+<span class="material-symbols-outlined" data-icon="medical_information">medical_information</span>
+</div>
+<div>
+<h3 class="font-title-md text-[24px] text-emerald-deep dark:text-emerald-vibrant mb-2">الرقى المجربة للصداع</h3>
+<p class="font-body-md text-slate-gray dark:text-slate-300 leading-relaxed mb-4">
+                        يُقرأ على المريض الفاتحة سبع مرات، وآية الكرسي، والمعوذتين. ويمسح بيده اليمنى على موضع الألم ويقول: "بسم الله، أعيذك بعزة الله وقدرته من شر ما تجد وتحاذر" سبع مرات.
+                    </p>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-rich/10 text-gold-rich text-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span> مجرب وصحيح
+                    </span>
+</div>
+</div>
+</div>
+</div>
+<!-- METHODOLOGY SECTION -->
+<div class="section-content w-full" id="section-methodology">
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-emerald-deep dark:text-emerald-vibrant mb-12 text-center">المنهجية العلمية</h1>
+<div class="max-w-4xl mx-auto space-y-6">
+<div class="bg-surface-container-lowest dark:bg-slate-800 p-6 rounded-xl border border-outline-variant dark:border-slate-700 shadow-sm">
+<h3 class="text-xl font-bold text-emerald-deep dark:text-emerald-vibrant mb-2">الصحيح (Sahih)</h3>
+<p class="text-slate-gray dark:text-slate-300">ما اتصل سنده بنقل العدل الضابط عن مثله إلى منتهاه من غير شذوذ ولا علة.</p>
+</div>
+<div class="bg-surface-container-lowest dark:bg-slate-800 p-6 rounded-xl border border-outline-variant dark:border-slate-700 shadow-sm">
+<h3 class="text-xl font-bold text-emerald-deep dark:text-emerald-vibrant mb-2">الصحيح لغيره (Sahih Lighayrihi)</h3>
+<p class="text-slate-gray dark:text-slate-300">الحسن لذاته إذا تعددت طرقه.</p>
+</div>
+<div class="bg-surface-container-lowest dark:bg-slate-800 p-6 rounded-xl border border-outline-variant dark:border-slate-700 shadow-sm">
+<h3 class="text-xl font-bold text-emerald-deep dark:text-emerald-vibrant mb-2">الحسن (Hasan)</h3>
+<p class="text-slate-gray dark:text-slate-300">ما اتصل سنده بنقل العدل الذي خف ضبطه عن مثله إلى منتهاه من غير شذوذ ولا علة.</p>
+</div>
+<div class="bg-surface-container-lowest dark:bg-slate-800 p-6 rounded-xl border border-outline-variant dark:border-slate-700 shadow-sm">
+<h3 class="text-xl font-bold text-emerald-deep dark:text-emerald-vibrant mb-2">الحسن لغيره (Hasan Lighayrihi)</h3>
+<p class="text-slate-gray dark:text-slate-300">الضعيف إذا تعددت طرقه ولم يكن سبب ضعفه فسق الراوي أو كذبه.</p>
+</div>
+<div class="bg-surface-container-lowest dark:bg-slate-800 p-6 rounded-xl border border-outline-variant dark:border-slate-700 shadow-sm">
+<h3 class="text-xl font-bold text-emerald-deep dark:text-emerald-vibrant mb-2">الضعيف (Da'if)</h3>
+<p class="text-slate-gray dark:text-slate-300">ما لم يجمع صفات الحسن بفقد شرط من شروطه.</p>
+</div>
+</div>
+</div>
+<!-- SOURCES SECTION -->
+<div class="section-content w-full" id="section-sources">
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-emerald-deep dark:text-emerald-vibrant mb-12 text-center">المصادر</h1>
+<div class="max-w-4xl mx-auto bg-surface-container-lowest dark:bg-slate-800 p-8 rounded-xl border border-outline-variant dark:border-slate-700 shadow-sm text-center">
+<span class="material-symbols-outlined text-6xl text-gold-rich mb-4">local_library</span>
+<h3 class="font-title-md text-[24px] text-emerald-deep dark:text-emerald-vibrant mb-4">المراجع الطبية والعلمية</h3>
+<p class="font-body-md text-slate-gray dark:text-slate-300 leading-relaxed">
+            تعتمد الموسوعة على مجموعة واسعة من المراجع الطبية المعتمدة والمخطوطات القديمة المحققة، بالإضافة إلى الاستشارات المتخصصة لضمان دقة المعلومات وصحتها.
+        </p>
+</div>
+</div>
+<!-- CONTACT SECTION -->
+<div class="section-content w-full" id="section-contact">
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-emerald-deep dark:text-emerald-vibrant mb-12 text-center">اتصل بنا</h1>
+<div class="max-w-xl mx-auto bg-surface-container-lowest dark:bg-slate-800 p-8 rounded-xl border border-outline-variant dark:border-slate-700 shadow-sm">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-3xl text-emerald-deep dark:text-emerald-vibrant">email</span>
+<div class="text-right flex-1">
+<p class="font-bold text-lg dark:text-white">البريد الإلكتروني:</p>
+<a class="text-gold-rich hover:underline" dir="ltr" href="mailto:Dr.sh.b1448@gmail.com">Dr.sh.b1448@gmail.com</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-3xl text-emerald-deep dark:text-emerald-vibrant">chat</span>
+<div class="text-right flex-1">
+<p class="font-bold text-lg dark:text-white">واتساب:</p>
+<a class="text-gold-rich hover:underline" dir="ltr" href="https://wa.me/966530449360">+966530449360</a>
+</div>
+</div>
+</div>
+</div>
+<!-- SEARCH RESULTS SECTION -->
+<div class="section-content w-full max-w-4xl mx-auto" id="section-search-results">
+<button class="mb-8 text-gold-rich flex items-center gap-2 hover:text-emerald-deep dark:hover:text-emerald-vibrant transition-colors" onclick="showSection('home')">
+<span class="material-symbols-outlined">arrow_forward</span> العودة
+</button>
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-emerald-deep dark:text-emerald-vibrant mb-8 text-center">نتائج البحث</h1>
+<div class="bg-surface-container-lowest dark:bg-slate-800 p-6 rounded-xl border border-outline-variant dark:border-slate-700 shadow-sm text-center">
+<span class="material-symbols-outlined text-4xl text-slate-gray mb-4">search_off</span>
+<p class="text-slate-gray dark:text-slate-300">لا توجد نتائج مطابقة لبحثك في الوقت الحالي. يرجى المحاولة مرة أخرى باستخدام كلمات مفتاحية مختلفة.</p>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation for Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-paper-white dark:bg-ink-black border-t border-outline-variant dark:border-slate-800 z-50 flex justify-around items-center h-16 pb-safe">
+<button class="flex flex-col items-center gap-1 text-slate-gray dark:text-slate-400 hover:text-emerald-deep dark:hover:text-emerald-vibrant w-16" onclick="showSection('home')">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-[10px] font-label-sm">الرئيسية</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-gray dark:text-slate-400 hover:text-emerald-deep dark:hover:text-emerald-vibrant w-16" onclick="showSection('advanced-search')">
+<span class="material-symbols-outlined text-[24px]">search</span>
+<span class="text-[10px] font-label-sm">البحث</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-gray dark:text-slate-400 hover:text-emerald-deep dark:hover:text-emerald-vibrant w-16" onclick="showSection('methodology')">
+<span class="material-symbols-outlined text-[24px]">account_tree</span>
+<span class="text-[10px] font-label-sm">المنهجية</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-gray dark:text-slate-400 hover:text-emerald-deep dark:hover:text-emerald-vibrant w-16" onclick="showSection('contact')">
+<span class="material-symbols-outlined text-[24px]">mail</span>
+<span class="text-[10px] font-label-sm">اتصل بنا</span>
+</button>
+</nav>
+<script>
+    function showSection(sectionId) {
+        document.querySelectorAll('.section-content').forEach(el => {
+            el.classList.remove('active');
+        });
+        const targetSection = document.getElementById('section-' + sectionId);
+        if(targetSection) {
+            targetSection.classList.add('active');
+        }
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    function toggleDarkMode() {
+        document.documentElement.classList.toggle('dark');
+    }
+</script>
+</body></html>
